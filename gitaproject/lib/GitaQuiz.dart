@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 class GitaQuiz extends StatefulWidget {
   @override
   _GitaQuizState createState() => _GitaQuizState();
+
+  static indexof(Map category) {}
 }
 
 class _GitaQuizState extends State<GitaQuiz> {
   List questions = [
     {
-      'question': 'Who created Flutter?',
+      'question': 'Q1. Who created Flutter?',
       'option1': 'Facebook',
       'option2': 'Adobe',
       'option3': 'Google',
@@ -31,7 +33,7 @@ class _GitaQuizState extends State<GitaQuiz> {
       'option2': 'Dart',
       'option3': 'C++',
       'option4': 'Kotlin',
-      'answers': 'DartDart',
+      'answers': 'Dart',
     },
     {
       'question': 'Q4. Who created Dart programing language?',
@@ -41,22 +43,22 @@ class _GitaQuizState extends State<GitaQuiz> {
       'option4': 'Jeremy Ashkenas',
       'answers': 'Brendan Eich',
     },
-    // {
-    //   'question':
-    //       'Q5. Is Flutter for Web and Desktop available in stable version?',
-    //   'option1': 'Yes',
-    //   'option2': 'No',
-    //   // 'option3': 'Bjarne Stroustrup++',
-    //   // 'option4': 'Jeremy Ashkenas',
-    //   'answers': 'No',
-    // },
+    {
+      'question':
+          'Q5. Is Flutter for Web and Desktop available in stable version?',
+      'option1': 'Yes',
+      'option2': 'No',
+      'option3': 'Bjarne Stroustrup++',
+      'option4': 'Jeremy Ashkenas',
+      'answers': 'No',
+    },
   ];
   var rightAnswerCount = 0;
   var wrongAnswerCount = 0;
   var currentIndex = 0;
   validateAnswer(userInput) {
     if (currentIndex < questions.length - 1) {
-      if (userInput == questions[currentIndex]['answer']) {
+      if (userInput == questions[currentIndex]['answers']) {
         setState(() {
           rightAnswerCount += 1;
           currentIndex += 1;
@@ -166,6 +168,7 @@ class _GitaQuizState extends State<GitaQuiz> {
                       },
                       child: Text('${questions[currentIndex]['option5']}')),
                 ),
+
                 // ElevatedButton(
                 //     onPressed: () {},
                 //     child: Text('${questions[currentIndex]['option4']}')),

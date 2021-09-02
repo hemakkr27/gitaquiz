@@ -24,6 +24,18 @@ List<Map> categories = [
   },
 ];
 
+List<Map> newcat = [
+  {
+    'ontap': GitaQuiz(),
+  },
+  {
+    'ontap': GitaQuiz(),
+  },
+  {
+    'ontap': GitaQuiz(),
+  },
+];
+
 List<Event> weekendEvents = [
   Event(
     name: 'Gita Quiz Festival',

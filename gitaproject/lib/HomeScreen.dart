@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gitaproject/GitaQuiz.dart';
+import 'package:gitaproject/Kmowkurukshetra.dart';
 import 'package:gitaproject/Modules/Data.dart';
 import 'package:gitaproject/Modules/Event.dart';
 import 'package:gitaproject/ProfileScreen.dart';
+import 'package:gitaproject/screens/quiz/quiz_screen.dart';
 
 import 'Widgets/HomeEventContainer.dart';
 
@@ -12,36 +14,38 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedCategory = 0;
+  // int _selectedCategory = 0;
 
-  List<Widget> buildCategoriesWidgets() {
-    List<Widget> categoriesWidgets = [];
-    for (Map category in categories) {
-      categoriesWidgets.add(GestureDetector(
-        child: Container(
-          color: _selectedCategory == categories.indexOf(category)
-              ? KAppColor
-              : Colors.transparent,
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          child: Row(
-            children: [
-              Icon(category['icon'], color: Colors.white),
-              SizedBox(width: 10),
-              Text(category['name'], style: TextStyle(color: Colors.white)),
-            ],
-          ),
-        ),
-        onTap: () {
-          setState(() {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => GitaQuiz()));
-            // _selectedCategory = categories.indexOf(category);
-          });
-        },
-      ));
-    }
-    return categoriesWidgets;
-  }
+  //List<Widget> buildCategoriesWidgets() {
+  //List<Widget> categoriesWidgets = [];
+  // for (Map category in categories) {
+  //   categoriesWidgets.add(GestureDetector(
+  //     child: Container(
+  //       color: _selectedCategory == categories.indexOf(category)
+  //           ? KAppColor
+  //           : Colors.transparent,
+  //       padding: EdgeInsets.symmetric(horizontal: 2, vertical: 5),
+  //       child:
+  //        Row(
+  //         children: [
+  //           Icon(category['icon'], color: Colors.white),
+  //           SizedBox(width: 2),
+  //           Text(category['name'], style: TextStyle(color: Colors.white)),
+  //         ],
+  //       ),
+  //     ),
+  //     onTap: () {
+  //       setState(() {
+  //         // Navigator.push(
+  //         //     context, MaterialPageRoute(builder: (context) => GitaQuiz()));
+  //         _selectedCategory = categories.indexOf(category);
+  //       });
+  //     },
+  //   )
+  //   );
+  // }
+  //return categoriesWidgets;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -93,12 +97,109 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                   ),
-                  Container(
-                    height: 50,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: buildCategoriesWidgets(),
-                    ),
+                  Row(
+                    children: [
+                      InkWell(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 2, vertical: 5),
+                                  child: Icon(Icons.music_note,
+                                      color: Colors.white),
+                                ),
+                                SizedBox(width: 5),
+                                Text('Gita Quiz',
+                                    style: TextStyle(color: Colors.white)),
+                              ]
+                              //buildCategoriesWidgets(),
+                              ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => GitaQuiz()));
+                        },
+                      ),
+                      InkWell(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 2, vertical: 5),
+                                  child: Icon(Icons.sports_basketball,
+                                      color: Colors.white),
+                                ),
+                                SizedBox(width: 5),
+                                Text('Know1 Kurukshetra',
+                                    style: TextStyle(color: Colors.white)),
+                              ]
+                              //buildCategoriesWidgets(),
+                              ),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => QuizScreen()));
+                        },
+                      ),
+                      InkWell(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 2, vertical: 5),
+                                  child:
+                                      Icon(Icons.fastfood, color: Colors.white),
+                                ),
+                                SizedBox(width: 5),
+                                Text('Gita Sound',
+                                    style: TextStyle(color: Colors.white)),
+                              ]
+                              //buildCategoriesWidgets(),
+                              ),
+                        ),
+                        onTap: () {
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) => Body()));
+                        },
+                      ),
+                      InkWell(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 2, vertical: 5),
+                                  child: Icon(Icons.bubble_chart,
+                                      color: Colors.white),
+                                ),
+                                SizedBox(width: 5),
+                                Text('Upcoming Gita',
+                                    style: TextStyle(color: Colors.white)),
+                              ]
+                              //buildCategoriesWidgets(),
+                              ),
+                        ),
+                        onTap: () {
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) => Body()));
+                        },
+                      ),
+                    ],
                   ),
                 ],
               ),
