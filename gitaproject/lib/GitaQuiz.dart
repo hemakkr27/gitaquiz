@@ -50,7 +50,7 @@ class _GitaQuizState extends State<GitaQuiz> {
       'option2': 'No',
       'option3': 'Bjarne Stroustrup++',
       'option4': 'Jeremy Ashkenas',
-      'answers': 'No',
+      'answers': 'Yes',
     },
   ];
   var rightAnswerCount = 0;
@@ -59,6 +59,7 @@ class _GitaQuizState extends State<GitaQuiz> {
   validateAnswer(userInput) {
     if (currentIndex < questions.length - 1) {
       if (userInput == questions[currentIndex]['answers']) {
+        print(currentIndex);
         setState(() {
           rightAnswerCount += 1;
           currentIndex += 1;
@@ -97,77 +98,125 @@ class _GitaQuizState extends State<GitaQuiz> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                    width: double.infinity,
                     color: Colors.white,
                     margin: EdgeInsets.all(8),
                     padding: EdgeInsets.all(8),
-                    child: Text(
-                      '${questions[currentIndex]['question']}',
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
-                      textAlign: TextAlign.center,
+                    child: Column(
+                      children: [
+                        Text(
+                          '${questions[currentIndex]['question']}',
+                          style: TextStyle(
+                            fontSize: 24,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          width: 360,
+                          height: 40,
+                          margin: EdgeInsets.only(bottom: 10, top: 10),
+                          child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white, elevation: 0),
+                                onPressed: () {
+                                  validateAnswer(
+                                      questions[currentIndex]['option1']);
+                                },
+                                child: Text(
+                                    '${questions[currentIndex]['option1']}',
+                                    style: TextStyle(color: Colors.red))),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          width: 360,
+                          height: 40,
+                          margin: EdgeInsets.only(bottom: 10, top: 10),
+                          child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    visualDensity: VisualDensity(),
+                                    primary: Colors.white,
+                                    elevation: 0),
+                                onPressed: () {
+                                  validateAnswer(
+                                      questions[currentIndex]['option2']);
+                                },
+                                child: Text(
+                                    '${questions[currentIndex]['option2']}',
+                                    style: TextStyle(color: Colors.red))),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          width: 360,
+                          height: 40,
+                          margin: EdgeInsets.only(bottom: 10, top: 10),
+                          child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white, elevation: 0),
+                                onPressed: () {
+                                  validateAnswer(
+                                      questions[currentIndex]['option3']);
+                                },
+                                child: Text(
+                                    '${questions[currentIndex]['option3']}',
+                                    style: TextStyle(color: Colors.red))),
+                          ),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          width: 360,
+                          height: 40,
+                          margin: EdgeInsets.only(bottom: 10, top: 10),
+                          child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white, elevation: 0),
+                                onPressed: () {
+                                  validateAnswer(
+                                      questions[currentIndex]['option4']);
+                                },
+                                child: Text(
+                                    '${questions[currentIndex]['option4']}',
+                                    style: TextStyle(color: Colors.red))),
+                          ),
+                        ),
+                        // Container(
+                        //   decoration: BoxDecoration(
+                        //       border: Border.all(),
+                        //       borderRadius: BorderRadius.circular(25)),
+                        //   width: 360,
+                        //   height: 40,
+                        //   margin: EdgeInsets.only(bottom: 10, top: 10),
+                        //   child: ElevatedButton(
+                        //       style: ElevatedButton.styleFrom(
+                        //           primary: Colors.transparent, elevation: 0),
+                        //       onPressed: () {
+                        //         validateAnswer(
+                        //             questions[currentIndex]['option5']);
+                        //       },
+                        //       child: Text(
+                        //           '${questions[currentIndex]['option5']}',
+                        //           style: TextStyle(color: Colors.red))),
+                        // ),
+                      ],
                     )),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey[900], elevation: 0),
-                      onPressed: () {
-                        validateAnswer(questions[currentIndex]['option1']);
-                      },
-                      child: Text('${questions[currentIndex]['option1']}')),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey[900], elevation: 0),
-                      onPressed: () {
-                        validateAnswer(questions[currentIndex]['option2']);
-                      },
-                      child: Text('${questions[currentIndex]['option2']}',
-                          style: TextStyle(color: Colors.white))),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey[900], elevation: 0),
-                      onPressed: () {
-                        validateAnswer(questions[currentIndex]['option3']);
-                      },
-                      child: Text('${questions[currentIndex]['option3']}')),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey[900], elevation: 0),
-                      onPressed: () {
-                        validateAnswer(questions[currentIndex]['option4']);
-                      },
-                      child: Text('${questions[currentIndex]['option4']}')),
-                ),
-                Container(
-                  width: double.infinity,
-                  height: 40,
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey[900], elevation: 0),
-                      onPressed: () {
-                        validateAnswer(questions[currentIndex]['option5']);
-                      },
-                      child: Text('${questions[currentIndex]['option5']}')),
-                ),
 
                 // ElevatedButton(
                 //     onPressed: () {},
