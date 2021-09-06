@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitaproject/GitaQuiz.dart';
-import 'package:gitaproject/Kmowkurukshetra.dart';
+
 import 'package:gitaproject/Modules/Data.dart';
 import 'package:gitaproject/Modules/Event.dart';
 import 'package:gitaproject/ProfileScreen.dart';
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Icon(Icons.music_note,
                                       color: Colors.white),
                                 ),
-                                SizedBox(width: 5),
+                                SizedBox(width: 3),
                                 Text('Gita Quiz',
                                     style: TextStyle(color: Colors.white)),
                               ]
@@ -137,8 +137,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Icon(Icons.sports_basketball,
                                       color: Colors.white),
                                 ),
-                                SizedBox(width: 5),
-                                Text('Know1 Kurukshetra',
+                                SizedBox(width: 3),
+                                Text('Know Kurukshetra',
                                     style: TextStyle(color: Colors.white)),
                               ]
                               //buildCategoriesWidgets(),
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child:
                                       Icon(Icons.fastfood, color: Colors.white),
                                 ),
-                                SizedBox(width: 5),
+                                SizedBox(width: 3),
                                 Text('Gita Sound',
                                     style: TextStyle(color: Colors.white)),
                               ]
@@ -187,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   child: Icon(Icons.bubble_chart,
                                       color: Colors.white),
                                 ),
-                                SizedBox(width: 5),
+                                SizedBox(width: 3),
                                 Text('Upcoming Gita',
                                     style: TextStyle(color: Colors.white)),
                               ]

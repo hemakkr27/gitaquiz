@@ -12,7 +12,7 @@ class ScoreScreen extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset("assets/icons/bg.svg", fit: BoxFit.fill),
+          //Image.asset("assets/icons/bg.svg", fit: BoxFit.fill),
           Column(
             children: [
               Spacer(flex: 3),
@@ -25,7 +25,7 @@ class ScoreScreen extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "${_qnController.correctAns * 10}/${_qnController.questions.length * 10}",
+                "${_qnController.numOfCorrectAns * 10}/${_qnController.questions.length * 10}",
                 style: Theme.of(context)
                     .textTheme
                     .headline4!

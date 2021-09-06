@@ -5,8 +5,6 @@ import 'package:gitaproject/controllers/question_controller.dart';
 import '../../../constants.dart';
 
 class ProgressBar extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +39,8 @@ class ProgressBar extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("${(controller.animation.value * 60).round()} sec"),
-                      Image.asset("assets/icons/clock.svg"),
+                      Icon(Icons.lock_clock),
+                      // Image.asset("assets/icons/clock.svg"),
                     ],
                   ),
                 ),

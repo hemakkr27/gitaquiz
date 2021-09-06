@@ -7,14 +7,14 @@ import 'progress_bar.dart';
 import 'question_card.dart';
 
 class Body extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     // So that we have acccess our controller
     QuestionController _questionController = Get.put(QuestionController());
     return Stack(
       children: [
-        Image.asset("assets/icons/bg.svg", fit: BoxFit.fill),
+        Icon(Icons.ac_unit_outlined),
+        //Image.asset("assets/icons/bg.svg", fit: BoxFit.fill),
         SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
