@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:gitaproject/HomeScreen.dart';
 import 'package:get/get.dart';
-import 'package:gitaproject/authentication/Login.dart';
+//import 'package:gitaproject/authentication/Login.dart';
+
+//import 'questionans_Api.dart';
 //import 'package:gitaproject/test.dart';
 
 void main() {
@@ -12,8 +14,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(debugShowCheckedModeBanner: false, home: LoginPage()
-        //HomeScreen(),
-        );
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:
+
+          //QuestAnsApi(),
+          HomeScreen(),
+      // LoginPage(),
+    );
   }
 }

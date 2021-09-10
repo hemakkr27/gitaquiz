@@ -22,9 +22,13 @@ class QuestionController extends GetxController
       .map(
         (question) => Question(
             id: question['id'],
+            questionDate: question['questionDate'],
             question: question['question'],
+            qno: question['qno'],
             options: question['options'],
-            answer: question['answer_index']),
+          
+            ansopt: question['ansopt'],
+            answer: question['actAns']),
       )
       .toList();
   List<Question> get questions => this._questions;

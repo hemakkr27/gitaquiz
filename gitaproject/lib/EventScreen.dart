@@ -152,7 +152,7 @@ class _EventScreenState extends State<EventScreen> {
                     color: KAppColor,
                     child: MaterialButton(
                       child: Text(
-                        'BUY TICKET',
+                        'Next View',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
