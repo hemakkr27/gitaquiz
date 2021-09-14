@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 //import 'package:gitaproject/controllers/back_question_controller.dart';
 import 'package:gitaproject/controllers/question_controller.dart';
@@ -38,10 +39,13 @@ class QuestionCard extends StatelessWidget {
             SizedBox(height: kDefaultPadding / 2),
             ...List.generate(
               question.options.length,
-              (index) => Option(
-                index: index,
-                text: question.options[index],
-                press: () => _controller.checkAns(question, index),
+              (index) => SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Option(
+                  index: index,
+                  text: question.options[index],
+                  press: () => _controller.checkAns(question, index),
+                ),
               ),
             ),
           ],
