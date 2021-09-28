@@ -1,13 +1,15 @@
+// import 'package:flutter/material.dart';
+
 // import 'package:flutter/widgets.dart';
 // import 'package:get/get.dart';
 // import 'package:get/state_manager.dart';
+// import 'package:gitaproject/HomeScreen.dart';
 // import 'package:gitaproject/models/Questions.dart';
-// import 'package:gitaproject/screens/score/score_screen.dart';
+
 
 // // We use get package for our state management
 
-// class QuestionController extends GetxController
-//     with SingleGetTickerProviderMixin {
+// class Randmcls extends GetxController with SingleGetTickerProviderMixin {
 //   // Lets animated our progress bar
 
 //   late AnimationController _animationController;
@@ -21,16 +23,13 @@
 //   List<Question> _questions = sample_data
 //       .map(
 //         (question) => Question(
-//             qno: question['qno'],
-//             srno: question['srno'],
+//             id: question['id'],
+//             questionDate: question['questionDate'],
 //             question: question['question'],
+//             qno: question['qno'],
 //             options: question['options'],
-//             qtype: question['T'],
-//             answer: question['actAns'],
 //             ansopt: question['ansopt'],
-//             link: question['link'],
-//           //  actAns: question['actAns'],
-//             questionDate: question['questionDate']),
+//             answer: question['actAns']),
 //       )
 //       .toList();
 //   List<Question> get questions => this._questions;
@@ -117,6 +116,10 @@
 //   }
 
 //   void updateTheQnNum(int index) {
-//     _questionNumber.value = index + 1;
+//     if (index == 10) {
+//       Get.to(HomeScreen());
+//     } else {
+//       _questionNumber.value = index + 1;
+//     }
 //   }
 // }

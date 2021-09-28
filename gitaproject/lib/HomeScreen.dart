@@ -4,7 +4,6 @@ import 'package:gitaproject/GitaQuiz.dart';
 import 'package:gitaproject/Modules/Data.dart';
 import 'package:gitaproject/Modules/Event.dart';
 import 'package:gitaproject/ProfileScreen.dart';
-import 'package:gitaproject/screens/quiz/quiz_screen.dart';
 
 import 'Widgets/HomeEventContainer.dart';
 
@@ -145,10 +144,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                         ),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => QuizScreen()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => QuizScreen()));
                         },
                       ),
                       InkWell(
@@ -164,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       Icon(Icons.fastfood, color: Colors.white),
                                 ),
                                 SizedBox(width: 3),
-                                Text('Gita Sound',
+                                Text('10 Question',
                                     style: TextStyle(color: Colors.white)),
                               ]
                               //buildCategoriesWidgets(),
@@ -172,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         onTap: () {
                           // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => Body()));
+                          //     MaterialPageRoute(builder: (context) => QuizScreen()));
                         },
                       ),
                       InkWell(
